@@ -1,0 +1,48 @@
+<div>
+  <main>
+    <section class="{{ player0class }}">
+      <h2 class="name" id="name--0">Player 1</h2>
+      <p class="score" id="score--0">{{ scores[0] }}</p>
+      <div class="current">
+        <p class="current-label">Current</p>
+        <p class="current-score" id="current--0">{{ current0score }}</p>
+      </div>
+    </section>
+    <section class="{{ player1class }}">
+      <h2 class="name" id="name--1">Player 2</h2>
+      <p class="score" id="score--1">{{ scores[1] }}</p>
+      <div class="current">
+        <p class="current-label">Current</p>
+        <p class="current-score" id="current--1">{{ current1score }}</p>
+      </div>
+    </section>
+
+    <img src="{{ diceUrl }}" alt="Playing dice" class="{{ diceClass }}" />
+    <button (click)="newGame()" class="btn btn--new">🔄 New game</button>
+    <button (click)="roll()" class="btn btn--roll">🎲 Roll dice</button>
+    <button (click)="hold()" class="btn btn--hold">📥 Hold</button>
+    <button (click)="instructions()" class="btn show-modal">
+      📖 Instructions
+    </button>
+  </main>
+  <div class="{{ modalClass }}">
+    <button (click)="closeModal()" class="close-modal">&times;</button>
+    <h1>How to Play 😍</h1>
+    <p>
+      The purpose of the game is to reach 50 points!
+      <br />
+      Each player rolls the dice and gets points according to the number on the
+      dice he gets, he can keep rolling until you hit 1.
+      <br />
+      when you hit 1 all of the points you gathered are resetted and the turn
+      goes to the second player.
+      <br />
+      when you feel that 1 will come you can press hold and save the points you
+      gathered so far and the turn will go to the next player.
+      <br />
+      The first player who gets to 50 points Wins 🎉🎉🎉
+      <br />Good Luck 😋
+    </p>
+  </div>
+  <div (click)="closeModal()" class="{{ overlayClass }}"></div>
+</div>
